@@ -1,4 +1,5 @@
 const workoutService = require("../services/workoutService");
+const WorkoutModel = require('../models/workout');
 
 const getAllWorkouts = (req, res) => {
   try {
@@ -35,7 +36,7 @@ const getOneWorkout = (req, res) => {
 
 }
 
-const createNewWorkout = (req, res) => {
+const createNewWorkout = async (req, res) => {
   const { body } = req;
   if (
     !body.name ||
@@ -55,21 +56,35 @@ const createNewWorkout = (req, res) => {
     });
     return;
   }
-  const newWorkout = {
-    name: body.name,
-    mode: body.mode,
-    equipment: body.equipment,
-    exercises: body.exercises,
-    trainerTips: body.trainerTips,
-  };
-  try {
-    const createdWorkout = workoutService.createNewWorkout(newWorkout);
-    res.status(201).send({ status: "OK", data: createdWorkout });
-  } catch (error) {
-    res
-      .status(error?.status || 500)
-      .send({ status: "FAILED", data: { error: error?.message || error } });
-  }
+  const newWorkout = new WorkoutModel({
+    ...body,
+    createdAt: new Date().toLocaleString("en-US", { timeZone: "America/Lima" }),
+    updatedAt: new Date().toLocaleString("en-US", { timeZone: "America/Lima" }),
+  });
+  await WorkoutModel
+    .exists({ name: 'Tommy V'})
+    .then((result ) => console.log('find', result))
+    .catch(err => console.log(err))
+
+  // await newWorkout
+  //   .save()
+  //   .then((result) => console.log(result))
+  //   .catch(err => console.log(err))
+  // const newWorkout = {
+  //   name: body.name,
+  //   mode: body.mode,
+  //   equipment: body.equipment,
+  //   exercises: body.exercises,
+  //   trainerTips: body.trainerTips,
+  // };
+  // try {
+  //   const createdWorkout = workoutService.createNewWorkout(newWorkout);
+  //   res.status(201).send({ status: "OK", data: createdWorkout });
+  // } catch (error) {
+  //   res
+  //     .status(error?.status || 500)
+  //     .send({ status: "FAILED", data: { error: error?.message || error } });
+  // }
 }
 
 const updateOneWorkout = (req, res) => {

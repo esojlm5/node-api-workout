@@ -1,4 +1,5 @@
 const DB = require("./db.json");
+const mongoose = require('mongoose');
 const { saveToDatabase } = require("./utils");
 
 const getAllWorkouts = () => {
@@ -24,9 +25,11 @@ const getOneWorkout = (workoutId) => {
   }
 };
 
-const createNewWorkout = (newWorkout) => {
+const createNewWorkout = async (newWorkout) => {
   const isAlreadyAdded =
     DB.workouts.findIndex((workout) => workout.name === newWorkout.name) > -1;
+    // await newWorkout.find({ name: 'jose'}).exec();
+  console.log('finder', isAlreadyAdded)
   if (isAlreadyAdded) {
     throw {
       status: 400,

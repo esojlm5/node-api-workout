@@ -23,7 +23,7 @@ const getOneWorkout = (workoutId) => {
 const createNewWorkout = (newWorkout) => {
   const workoutToInsert = {
     ...newWorkout,
-    id: uuid(),
+    // id: uuid(),
     createdAt: new Date().toLocaleString("en-US", { timeZone: "America/Lima" }),
     updatedAt: new Date().toLocaleString("en-US", { timeZone: "America/Lima" }),
   };

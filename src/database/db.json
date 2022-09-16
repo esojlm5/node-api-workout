@@ -85,6 +85,105 @@
       "id": "a24d2618-01d1-4682-9288-8de1343e53c7",
       "createdAt": "4/22/2022, 5:50:17 PM",
       "updatedAt": "4/22/2022, 5:50:17 PM"
+    },
+    {
+      "$__": {
+        "activePaths": {
+          "paths": {
+            "name": "modify",
+            "equipment": "modify",
+            "exercises": "modify",
+            "trainerTips": "modify",
+            "_id": "default",
+            "mode": "modify",
+            "createdAt": "modify",
+            "updatedAt": "modify"
+          },
+          "states": {
+            "require": {},
+            "default": {
+              "_id": true
+            },
+            "modify": {
+              "name": true,
+              "mode": true,
+              "equipment": true,
+              "exercises": true,
+              "createdAt": true,
+              "updatedAt": true,
+              "trainerTips": true
+            }
+          }
+        },
+        "pathsToScopes": {
+          "trainerTips": {
+            "name": "Tommy V",
+            "mode": "For Time",
+            "equipment": [
+              "barbell",
+              "rope"
+            ],
+            "exercises": [
+              "21 thrusters",
+              "12 rope climbs, 15 ft",
+              "15 thrusters",
+              "9 rope climbs, 15 ft",
+              "9 thrusters",
+              "6 rope climbs, 15 ft"
+            ],
+            "createdAt": "2022-04-20T19:21:56.000Z",
+            "updatedAt": "2022-04-20T19:21:56.000Z",
+            "trainerTips": [
+              "Split the 21 thrusters as needed",
+              "Try to do the 9 and 6 thrusters unbroken",
+              "RX Weights: 115lb/75lb"
+            ],
+            "_id": "632258db65c05dfc84102b9e"
+          }
+        },
+        "op": "validate",
+        "saving": {},
+        "$versionError": {
+          "version": 0,
+          "modifiedPaths": [
+            "name",
+            "mode",
+            "equipment",
+            "exercises",
+            "createdAt",
+            "updatedAt",
+            "trainerTips"
+          ]
+        },
+        "saveOptions": {},
+        "validating": {}
+      },
+      "_doc": {
+        "name": "Tommy V",
+        "mode": "For Time",
+        "equipment": [
+          "barbell",
+          "rope"
+        ],
+        "exercises": [
+          "21 thrusters",
+          "12 rope climbs, 15 ft",
+          "15 thrusters",
+          "9 rope climbs, 15 ft",
+          "9 thrusters",
+          "6 rope climbs, 15 ft"
+        ],
+        "createdAt": "2022-04-20T19:21:56.000Z",
+        "updatedAt": "2022-04-20T19:21:56.000Z",
+        "trainerTips": [
+          "Split the 21 thrusters as needed",
+          "Try to do the 9 and 6 thrusters unbroken",
+          "RX Weights: 115lb/75lb"
+        ],
+        "_id": "632258db65c05dfc84102b9e"
+      },
+      "createdAt": "9/14/2022, 5:42:35 PM",
+      "updatedAt": "9/14/2022, 5:42:35 PM"
     }
   ],
   "members": [
